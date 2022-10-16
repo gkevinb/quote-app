@@ -1,22 +1,19 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
+import quotes from './quotes'
 
 function App() {
+  const [count, ] = useState(Math.floor(Math.random() * quotes.length))
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {quotes[count].text}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          {quotes[count].author}
+        </p>
       </header>
     </div>
   );
